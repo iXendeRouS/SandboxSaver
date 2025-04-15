@@ -7,6 +7,11 @@ namespace SandboxSaver
     {
         public static readonly ModSettingBool ModEnabled = new(true);
 
+        public static readonly ModSettingButton OpenSavesFolder = new(SandboxSaver.OpenSaveFolder)
+        {
+            buttonText = "Open"
+        };
+
         public static readonly ModSettingHotkey LoadSaveHotkey = new(UnityEngine.KeyCode.L)
         {
             description = "Show the load sandbox save prompt"

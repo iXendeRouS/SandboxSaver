@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
 using System.Text;
@@ -41,16 +42,10 @@ public class SandboxSaver : BloonsTD6Mod
         if (PopupScreen.instance.IsPopupActive()) return;
 
         if (Settings.MakeSaveHotkey.JustPressed())
-        {
-            MelonLogger.Msg("MakeSaveHotkey just pressed");
             HandleMakeSaveHotkey();
-        }
 
         if (Settings.LoadSaveHotkey.JustPressed())
-        {
-            MelonLogger.Msg("LoadSaveHotkey just pressed");
             HandleLoadSaveHotkey();
-        }
     }
 
     private void HandleMakeSaveHotkey()
@@ -171,11 +166,21 @@ public class SandboxSaver : BloonsTD6Mod
     }
 
     // dont call this before the Game.instance instance is initialised
-    private string GetSaveFolder()
+    private static string GetSaveFolder()
     {
         string savePath = Path.Combine(Game.instance.playerService.configuration.playerDataRootPath, SaveFolderName);
         Directory.CreateDirectory(savePath);
 
         return savePath;
+    }
+
+    public static void OpenSaveFolder()
+    {
+        Process.Start(new ProcessStartInfo
+        {
+            FileName = GetSaveFolder(),
+            UseShellExecute = true,
+            Verb = "open"
+        });
     }
 }
