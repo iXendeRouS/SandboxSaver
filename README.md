@@ -6,11 +6,8 @@
 SandboxSaver
 </h1>
 
-Make saves in sandbox.
+Make saves of games to load them in sandbox
 
-Press M to make and L to load sandbox saves by name.
-Does not override existing non-sandbox runs.
-
-Map saving/loading logic "borrowed" from https://github.com/doombubbles/time-machine
+Map saving/loading logic from from https://github.com/doombubbles/time-machine
 
 [![Requires BTD6 Mod Helper](https://raw.githubusercontent.com/gurrenm3/BTD-Mod-Helper/master/banner.png)](https://github.com/gurrenm3/BTD-Mod-Helper#readme)
