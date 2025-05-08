@@ -12,12 +12,12 @@ namespace SandboxSaver
             buttonText = "Open"
         };
 
-        public static readonly ModSettingHotkey LoadSaveHotkey = new(UnityEngine.KeyCode.L)
+        public static readonly ModSettingHotkey LoadSaveHotkey = new(UnityEngine.KeyCode.None)
         {
             description = "Show the load sandbox save prompt"
         };
 
-        public static readonly ModSettingHotkey MakeSaveHotkey = new(UnityEngine.KeyCode.M)
+        public static readonly ModSettingHotkey MakeSaveHotkey = new(UnityEngine.KeyCode.None)
         {
             description = "Make a save of the current sandbox instance"
         };
